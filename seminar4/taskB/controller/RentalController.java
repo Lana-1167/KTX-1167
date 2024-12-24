@@ -33,4 +33,14 @@ public class RentalController {
             throw new RuntimeException("Error creating rental: " + e.getMessage());
         }
     }
+
+    public void endRental(int rentalId) {
+        try {
+            instrumentDAO.endRental(rentalId);
+            System.out.println("Rental ended successfully.");
+        } catch (Exception e) {
+            throw new RuntimeException("Error ending rental: " + e.getMessage());
+        }
+    }
+
 }
